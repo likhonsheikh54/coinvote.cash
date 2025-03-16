@@ -42,7 +42,7 @@ const staticPages = [
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://coinvote.xyz"
+  const baseUrl = "https://coinvote.cash"
 
   // Generate sitemap entries for static pages
   const staticEntries = staticPages.map(({ route }) => ({

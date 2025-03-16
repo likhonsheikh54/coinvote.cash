@@ -5,6 +5,12 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone()
   const pathname = url.pathname
 
+  // Redirect /coins to /coins-list
+  if (pathname === "/coins") {
+    url.pathname = "/coins-list"
+    return NextResponse.redirect(url)
+  }
+  
   // Check if the path is in the /coins/ directory and looks like an ID
   if (pathname.startsWith("/coins/") && pathname.split("/").length === 3) {
     const potentialIdOrSymbol = pathname.split("/")[2]
@@ -21,6 +27,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/coins/:path*"],
+  matcher: ["/coins", "/coins/:path*"],
 }
 
