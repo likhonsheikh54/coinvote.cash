@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     creator: "@coinvotecash",
     images: ["https://coinvote.cash/twitter-image.jpg"],
   },
-  manifest: "/manifest.json",
+  manifest: "/manifest",
   icons: {
     icon: [
       { url: "/favicon.ico" },

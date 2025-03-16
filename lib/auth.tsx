@@ -137,5 +137,4 @@ export const getAuthSession = async () => {
       }
     })
   })
-}
-
+} 

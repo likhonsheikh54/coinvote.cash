@@ -155,5 +155,4 @@ export function StructuredData({ data }: { data: Record<string, any> }) {
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} 
     />
   );
-}
-
+} 
