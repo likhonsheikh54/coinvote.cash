@@ -1,0 +1,92 @@
+# Coinvote.cash Architecture
+
+## Overview
+Coinvote.cash is a cryptocurrency voting and information platform built with a modern tech stack focused on performance, scalability, and real-time data. The application follows a serverless architecture pattern with Next.js App Router for frontend and backend functionality.
+
+## Tech Stack
+
+### Frontend
+- **Next.js 14+**: React framework with App Router for server components and client components
+- **TypeScript**: For type safety and better developer experience
+- **Tailwind CSS**: For responsive styling
+- **shadcn/ui**: Component library built on Radix UI
+- **Recharts**: For interactive cryptocurrency price charts
+- **Lucide React**: For icons
+
+### Backend
+- **Next.js API Routes**: Serverless API endpoints
+- **Neon Postgres**: Serverless PostgreSQL database
+- **Redis (Upstash)**: For caching and performance optimization
+- **Vercel Blob Storage**: For storing coin logos and images
+- **Firebase Authentication**: For user authentication and management
+
+### External APIs
+- **CoinGecko API**: Primary source for cryptocurrency price data
+- **CoinMarketCap API**: Secondary source for cryptocurrency data
+- **DexScreener API**: For DEX trading data (planned)
+
+## Database Schema
+
+### Main Tables
+1. **coins**: Stores basic coin information
+   - id, name, symbol, logo, price, market_cap, volume_24h, votes, etc.
+
+2. **promoted_coins**: Tracks promoted coins
+   - id, coin_id, tx_hash, created_at, active
+
+3. **users**: User information (managed by Firebase)
+   - uid, email, role, created_at
+
+4. **votes**: Tracks user votes
+   - id, coin_id, user_id, ip_address, created_at
+
+5. **listing_requests**: Pending coin listing requests
+   - id, name, symbol, description, website, contract_address, logo, email, status
+
+## Caching Strategy
+- Redis caching for frequently accessed data:
+  - Promoted coins: 5 minutes TTL
+  - Coin details: 5 minutes TTL
+  - Price charts: Variable TTL (5min for 24h, 30min for 7d, 1hr for 30d)
+  - Vote counts: 5 minutes TTL
+
+## API Routes
+- **/api/promoted-coins**: Get/manage promoted coins
+- **/api/coins/[symbol]**: Get coin details
+- **/api/coins/[symbol]/votes**: Get/update vote counts
+- **/api/coins/[symbol]/chart**: Get price chart data
+- **/api/listing**: Submit listing requests
+- **/api/upload-logo**: Upload coin logos to Vercel Blob
+
+## Performance Optimizations
+1. **Server-side Rendering**: Critical data is rendered on the server
+2. **Incremental Static Regeneration**: For coin pages
+3. **Redis Caching**: To reduce database load
+4. **Image Optimization**: Using Next.js Image component
+5. **API Response Caching**: With appropriate cache headers
+
+## SEO Optimizations
+1. **Dynamic Metadata**: Per-page metadata for better SEO
+2. **Sitemap Generation**: Automatic sitemap.xml generation
+3. **robots.txt**: Proper configuration for search engines
+4. **Structured Data**: JSON-LD for rich search results
+
+## Deployment
+- **Vercel**: For hosting the Next.js application
+- **Neon**: For PostgreSQL database
+- **Upstash**: For Redis caching
+- **Vercel Blob**: For file storage
+- **Firebase**: For authentication
+
+## Monitoring & Analytics
+- **Vercel Analytics**: For performance monitoring
+- **Vercel Speed Insights**: For Core Web Vitals tracking
+- **Firebase Analytics**: For user behavior tracking
+
+## Security Measures
+1. **Server-side Environment Variables**: For sensitive API keys
+2. **Firebase Authentication**: For secure user management
+3. **API Rate Limiting**: To prevent abuse
+4. **Input Validation**: For all user inputs
+5. **CORS Policies**: Properly configured for API endpoints
+

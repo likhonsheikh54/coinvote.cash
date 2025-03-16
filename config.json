@@ -1,0 +1,14 @@
+{
+  "coingecko": {
+    "apiUrl": "https://api.coingecko.com/api/v3",
+    "apiKey": ""
+  },
+  "coinmarketcap": {
+    "apiUrl": "https://pro-api.coinmarketcap.com/v1",
+    "apiKey": ""
+  },
+  "dexscreener": {
+    "apiUrl": "https://api.dexscreener.com"
+  }
+}
+
