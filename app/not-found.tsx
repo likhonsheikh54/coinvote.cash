@@ -30,7 +30,7 @@ export default function NotFound() {
             </Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/coins">
+            <Link href="/coins-list">
               <Search className="mr-2 h-4 w-4" />
               Explore Coins
             </Link>
@@ -41,7 +41,7 @@ export default function NotFound() {
           <h3 className="text-lg font-medium mb-4">Popular Pages</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/coins" className="text-coin-yellow hover:underline">
+              <Link href="/coins-list" className="text-coin-yellow hover:underline">
                 Cryptocurrency List
               </Link>
             </li>

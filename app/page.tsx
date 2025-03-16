@@ -32,7 +32,7 @@ export default function Home() {
                 real-time.
               </p>
               <div className="flex gap-4">
-                <Link href="/coins">
+                <Link href="/coins-list">
                   <Button className="bg-coin-green hover:bg-coin-green/90 text-white">Explore Coins</Button>
                 </Link>
                 <Link href="/listing">

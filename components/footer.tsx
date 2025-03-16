@@ -48,8 +48,8 @@ export default function Footer() {
             <h3 className="font-bold mb-4 text-coin-yellow">Explore</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/coins" className="hover:text-coin-green">
-                  Coins
+                <Link href="/coins-list" className="hover:text-coin-green">
+                  Cryptocurrencies
                 </Link>
               </li>
               <li>

@@ -17,6 +17,7 @@ const staticPages = [
   { route: "/privacy" },
   { route: "/terms" },
   { route: "/portfolio" },
+  { route: "/coins-list" },
   // Ranking pages
   { route: "/ranking/rising" },
   { route: "/ranking/trending" },

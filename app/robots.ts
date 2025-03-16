@@ -9,8 +9,8 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/admin/", "/_next/", "/private/"],
       },
     ],
-    sitemap: "https://coinvote.xyz/sitemap.xml",
-    host: "https://coinvote.xyz",
+    sitemap: "https://coinvote.cash/sitemap.xml",
+    host: "https://coinvote.cash",
   }
 }
 
