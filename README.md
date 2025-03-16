@@ -1,39 +1,61 @@
-# coinvote.cash
-Discover and vote for the best cryptocurrencies. Track prices, market caps, and community activity in real-time.
+# CoinVote.cash
 
-- **/api/coins/[symbol]/votes**: Get/update vote counts
-- **/api/coins/[symbol]/chart**: Get price chart data
-- **/api/listing**: Submit listing requests
-- **/api/upload-logo**: Upload coin logos to Vercel Blob
+A modern cryptocurrency discovery and voting platform. Track prices, market caps, and community sentiment in real-time.
 
-## Performance Optimizations
-1. **Server-side Rendering**: Critical data is rendered on the server
-2. **Incremental Static Regeneration**: For coin pages
-3. **Redis Caching**: To reduce database load
-4. **Image Optimization**: Using Next.js Image component
-5. **API Response Caching**: With appropriate cache headers
+## Core Features
 
-## SEO Optimizations
-1. **Dynamic Metadata**: Per-page metadata for better SEO
-2. **Sitemap Generation**: Automatic sitemap.xml generation
-3. **robots.txt**: Proper configuration for search engines
-4. **Structured Data**: JSON-LD for rich search results
+- **Community Voting**: Discover trending cryptocurrencies based on user votes
+- **Price Tracking**: Real-time price and market cap data
+- **Personalized Portfolio**: Track your favorite coins
+- **Trending Analysis**: Identify emerging market patterns
+- **DEX Integration**: Direct access to decentralized exchanges
 
-## Deployment
-- **Vercel**: For hosting the Next.js application
-- **Neon**: For PostgreSQL database
-- **Upstash**: For Redis caching
-- **Vercel Blob**: For file storage
-- **Firebase**: For authentication
+## API Endpoints
 
-## Monitoring & Analytics
-- **Vercel Analytics**: For performance monitoring
-- **Vercel Speed Insights**: For Core Web Vitals tracking
-- **Firebase Analytics**: For user behavior tracking
+- **/api/coins/[symbol]/votes**: Get or update community vote counts
+- **/api/coins/[symbol]/chart**: Retrieve historical price data
+- **/api/listing**: Submit new cryptocurrency listings
+- **/api/trending**: Get currently trending tokens
+- **/api/upload-logo**: Upload coin logos (Vercel Blob storage)
 
-## Security Measures
-1. **Server-side Environment Variables**: For sensitive API keys
-2. **Firebase Authentication**: For secure user management
-3. **API Rate Limiting**: To prevent abuse
-4. **Input Validation**: For all user inputs
-5. **CORS Policies**: Properly configured for API endpoints
+## Technical Architecture
+
+### Performance Optimizations
+- Server-side Rendering for critical data
+- Incremental Static Regeneration for coin pages
+- Redis caching to reduce database load
+- Next.js Image optimization
+- Strategic API response caching
+
+### SEO Enhancements
+- Dynamic per-page metadata
+- Automated sitemap generation
+- Structured data (JSON-LD)
+- Search engine-friendly routing
+
+### Infrastructure
+- **Frontend**: Next.js
+- **Database**: PostgreSQL (Neon)
+- **Caching**: Redis (Upstash)
+- **Storage**: Vercel Blob
+- **Auth**: Firebase Authentication
+- **Hosting**: Vercel
+
+### Security
+- Server-side environment variables
+- Comprehensive input validation
+- API rate limiting
+- Strict CORS policies
+
+### Monitoring
+- Vercel Analytics and Speed Insights
+- Core Web Vitals tracking
+- User behavior analytics
+
+## Community Pages
+- /community-votes - Community-driven token rankings
+- /gainers-losers - Top performing and declining assets
+- /meme-explorer - Dedicated meme coin discovery
+- /eth-wars - Ethereum ecosystem competition tracker
+
+Visit [CoinVote.cash](https://coinvote.cash) to start discovering and voting for your favorite cryptocurrencies.
