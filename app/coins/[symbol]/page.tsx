@@ -196,14 +196,8 @@ export default async function CoinPage({ params }: { params: { symbol: string } 
                 <iframe
                   data-aa="2386176"
                   src="//ad.a-ads.com/2386176?size=728x90"
-                  style={{
-                    width: "728px",
-                    height: "90px",
-                    border: "0px",
-                    padding: 0,
-                    overflow: "hidden",
-                    backgroundColor: "transparent",
-                  }}
+                  title="Cryptocurrency Advertisement Banner"
+                  className="ad-banner-728x90"
                 />
               </div>
 
@@ -211,14 +205,8 @@ export default async function CoinPage({ params }: { params: { symbol: string } 
                 <iframe
                   data-aa="2386176"
                   src="//acceptable.a-ads.com/2386176"
-                  style={{
-                    border: "0px",
-                    padding: 0,
-                    width: "100%",
-                    height: "100%",
-                    overflow: "hidden",
-                    backgroundColor: "transparent",
-                  }}
+                  title="Cryptocurrency Acceptable Advertisement"
+                  className="ad-banner-full"
                 />
               </div>
             </div>

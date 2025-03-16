@@ -4,7 +4,7 @@ import { getCoins } from "@/lib/coingecko-api"
 // In a real application, this would be fetched from a database
 const staticPages = [
   { route: "/" },
-  { route: "/coins" },
+  { route: "/coins-list" },
   { route: "/nft" },
   { route: "/articles" },
   { route: "/icos" },
@@ -17,7 +17,22 @@ const staticPages = [
   { route: "/privacy" },
   { route: "/terms" },
   { route: "/portfolio" },
-  { route: "/coins-list" },
+  { route: "/pump-fun" },
+  { route: "/dictionary" },
+  { route: "/disclaimer" },
+  { route: "/community-votes" },
+  { route: "/gainers-losers" },
+  { route: "/eth-wars" },
+  { route: "/meme-explorer" },
+  { route: "/login" },
+  { route: "/signup" },
+  { route: "/app" },
+  { route: "/cookie-preferences" },
+  { route: "/top-traders" },
+  { route: "/listing" },
+  { route: "/dex" },
+  { route: "/bug-bounty" },
+  { route: "/ad-policy" },
   // Ranking pages
   { route: "/ranking/rising" },
   { route: "/ranking/trending" },
@@ -33,12 +48,14 @@ const staticPages = [
   { route: "/coins/categories" },
   { route: "/coins/most-voted" },
   { route: "/coins/blacklisted" },
+  { route: "/coins-list/recently-listed" },
   // Campaign pages
   { route: "/campaigns/airdrops" },
   { route: "/campaigns/icos" },
   { route: "/campaigns/events" },
   // Listing page
-  { route: "/listing" },
+  { route: "/listing/form" },
+  { route: "/listing/success" },
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -57,7 +74,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Generate sitemap entries for dynamic coin pages
   const coinEntries = coins.map((coin) => ({
-    url: `${baseUrl}/coins/${coin.id}`,
+    url: `${baseUrl}/coins/${coin.symbol.toLowerCase()}`,
     lastModified: new Date(),
     changeFrequency: "hourly" as const,
     priority: 0.9,

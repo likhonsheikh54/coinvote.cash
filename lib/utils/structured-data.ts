@@ -16,11 +16,23 @@ export function generateCryptoCurrencyStructuredData(data: CryptocurrencyStructu
     description: data.description,
     image: data.image,
     url: data.url,
+    category: "Cryptocurrency",
+    brand: {
+      "@type": "Brand",
+      name: data.name,
+      logo: data.image
+    },
     offers: {
       "@type": "Offer",
       priceCurrency: data.priceCurrency,
       price: data.price,
       availability: "https://schema.org/InStock",
+      priceValidUntil: new Date(Date.now() + 86400000).toISOString().split('T')[0], // 24 hours from now
+      url: data.url,
+      seller: {
+        "@type": "Organization",
+        name: "Coinvote.cash"
+      }
     },
   }
 }
@@ -67,7 +79,81 @@ export function generateBreadcrumbStructuredData(data: BreadcrumbStructuredData)
   }
 }
 
+type OrganizationStructuredData = {
+  name: string
+  url: string
+  logo: string
+  description?: string
+  sameAs?: string[]
+}
+
+export function generateOrganizationStructuredData(data: OrganizationStructuredData): Record<string, any> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: data.name,
+    url: data.url,
+    logo: {
+      "@type": "ImageObject",
+      url: data.logo
+    },
+    description: data.description,
+    sameAs: data.sameAs || []
+  }
+}
+
+type ArticleStructuredData = {
+  headline: string
+  description: string
+  image: string
+  datePublished: string
+  dateModified: string
+  author: {
+    name: string
+    url?: string
+  }
+  publisher: {
+    name: string
+    logo: string
+  }
+  url: string
+}
+
+export function generateArticleStructuredData(data: ArticleStructuredData): Record<string, any> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: data.headline,
+    description: data.description,
+    image: data.image,
+    datePublished: data.datePublished,
+    dateModified: data.dateModified,
+    author: {
+      "@type": "Person",
+      name: data.author.name,
+      url: data.author.url
+    },
+    publisher: {
+      "@type": "Organization",
+      name: data.publisher.name,
+      logo: {
+        "@type": "ImageObject",
+        url: data.publisher.logo
+      }
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": data.url
+    }
+  }
+}
+
 export function StructuredData({ data }: { data: Record<string, any> }) {
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  return (
+    <script 
+      type="application/ld+json" 
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} 
+    />
+  );
 }
 

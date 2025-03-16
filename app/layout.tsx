@@ -13,9 +13,16 @@ export const metadata: Metadata = {
   },
   description:
     "Discover and vote for the best cryptocurrencies. Track prices, market caps, and community activity in real-time.",
-  keywords: ["cryptocurrency", "crypto voting", "coin ranking", "blockchain", "bitcoin", "ethereum"],
-  authors: [{ name: "Coinvote Team" }],
+  keywords: ["cryptocurrency", "crypto voting", "coin ranking", "blockchain", "bitcoin", "ethereum", "altcoins", "defi", "nft", "web3", "crypto market", "token voting"],
+  authors: [{ name: "Coinvote Team", url: "https://coinvote.cash/about" }],
   creator: "Coinvote.cash",
+  publisher: "Coinvote.cash",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://coinvote.cash"),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -29,7 +36,15 @@ export const metadata: Metadata = {
         url: "https://coinvote.cash/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Coinvote.cash",
+        alt: "Coinvote.cash - Cryptocurrency Voting Platform",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://coinvote.cash/og-image-alt.png",
+        width: 1200,
+        height: 630,
+        alt: "Vote for your favorite cryptocurrencies",
+        type: "image/png",
       },
     ],
   },
@@ -38,8 +53,9 @@ export const metadata: Metadata = {
     title: "Coinvote.cash - Most Voted Cryptocurrencies Today",
     description:
       "Discover and vote for the best cryptocurrencies. Track prices, market caps, and community activity in real-time.",
-    images: ["https://coinvote.cash/og-image.jpg"],
+    site: "@coinvotecash",
     creator: "@coinvotecash",
+    images: ["https://coinvote.cash/twitter-image.jpg"],
   },
   manifest: "/manifest.json",
   icons: {
@@ -58,9 +74,10 @@ export const metadata: Metadata = {
     bing: "bing-verification-code",
   },
   alternates: {
-    canonical: "https://coinvote.cash",
+    canonical: "/",
     languages: {
-      "en-US": "https://coinvote.cash",
+      'en-US': "/en-US",
+      'es-ES': "/es-ES",
     },
   },
   robots: {
