@@ -1,4 +1,5 @@
 import LoginForm from "@/components/auth/login-form"
+import { viewport } from "../viewport"
 
 export const metadata = {
   title: "Login | Coinvote.cash",
@@ -8,4 +9,6 @@ export const metadata = {
 export default function LoginPage() {
   return <LoginForm />
 }
+
+export { viewport }
 

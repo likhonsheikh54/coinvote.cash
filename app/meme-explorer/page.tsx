@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import MemeExplorerClientPage from "./MemeExplorerClientPage"
+import { viewport } from "../viewport"
 
 export const metadata: Metadata = {
   title: "Meme Explorer | Coinvote.xyz",
@@ -11,4 +12,6 @@ export const metadata: Metadata = {
 export default async function MemeExplorerPage() {
   return <MemeExplorerClientPage />
 }
+
+export { viewport }
 

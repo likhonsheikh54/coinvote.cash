@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CalendarIcon, Clock, DollarSign, Users } from "lucide-react"
+import { viewport } from "../viewport"
 
 export const metadata: Metadata = {
   title: "Initial Coin Offerings (ICOs) | Coinvote.xyz",
@@ -232,4 +233,6 @@ export default function ICOsPage() {
     </div>
   )
 }
+
+export { viewport }
 

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { CheckCircle } from "lucide-react"
 import Link from "next/link"
 import type { Metadata } from "next"
+import { viewport } from "../../viewport"
 
 export const metadata: Metadata = {
   title: "Listing Submitted - Coinvote.cash",
@@ -44,4 +45,6 @@ export default function ListingSuccessPage() {
     </div>
   )
 }
+
+export { viewport }
 

@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
+import { viewport } from "../../viewport"
 
 export default function ListingFormPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -264,4 +265,6 @@ export default function ListingFormPage() {
     </div>
   )
 }
+
+export { viewport }
 

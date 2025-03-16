@@ -1,12 +1,17 @@
-"use server"
+'use server';
 
 import { submitUrlToIndexNow, submitUrlsToIndexNow } from "./indexnow-api"
 import { revalidatePath } from "next/cache"
 
+type IndexNowResponse = {
+  success: boolean;
+  message: string;
+}
+
 /**
  * Submit a single URL to IndexNow when content is updated
  */
-export async function submitPageToIndexNow(url: string, path: string) {
+export async function submitPageToIndexNow(url: string, path: string): Promise<IndexNowResponse> {
   try {
     const success = await submitUrlToIndexNow(url)
 
@@ -29,7 +34,7 @@ export async function submitPageToIndexNow(url: string, path: string) {
 /**
  * Submit multiple URLs to IndexNow in bulk
  */
-export async function submitPagesToIndexNow(urls: string[], paths: string[] = []) {
+export async function submitPagesToIndexNow(urls: string[], paths: string[] = []): Promise<IndexNowResponse> {
   try {
     const success = await submitUrlsToIndexNow(urls)
 
@@ -51,8 +56,17 @@ export async function submitPagesToIndexNow(urls: string[], paths: string[] = []
 
 // Add the missing export for IndexNow key file content
 export async function getIndexNowKeyFileContent(): Promise<string> {
+<<<<<<< HEAD
   // This should be the verification content for IndexNow
   // The file name is already the key: 7e2d195823e7419283de865536920ba8
   return '7e2d195823e7419283de865536920ba8';
+=======
+  try {
+    return '7e2d195823e7419283de865536920ba8';
+  } catch (error) {
+    console.error("Error in getIndexNowKeyFileContent:", error);
+    throw new Error("Failed to get IndexNow key file content");
+  }
+>>>>>>> 5565b46b08925b3ff33f180d18b115617aadbb96
 }
 

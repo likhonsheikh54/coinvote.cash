@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Plus, Settings, Share2, ChevronDown } from "lucide-react"
+import { viewport } from "../viewport"
 
 // Mock portfolio data
 const portfolioData = {
@@ -219,4 +220,6 @@ export default function PortfolioPage() {
     </div>
   )
 }
+
+export { viewport }
 

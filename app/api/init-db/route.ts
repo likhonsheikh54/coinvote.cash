@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server"
-import { initDatabase } from "@/lib/db/schema"
+import { initializeDatabase } from "@/lib/db/init-database"
 
 export async function GET() {
   try {
-    const result = await initDatabase()
+    const result = await initializeDatabase()
 
     if (result.success) {
       return NextResponse.json({

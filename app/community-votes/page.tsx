@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { getCommunityVotes, getTopCoins, getCMCLatestListings, getPumpFunTrending } from "@/lib/actions-extended"
 import { getColorForChange } from "@/lib/coinmarketcap-api"
+import { viewport } from "../viewport"
 
 export default function CommunityVotesPage() {
   const [activeTab, setActiveTab] = useState("coingecko")
@@ -353,4 +354,6 @@ export default function CommunityVotesPage() {
     </div>
   )
 }
+
+export { viewport }
 
