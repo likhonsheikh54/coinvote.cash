@@ -9,6 +9,7 @@ import FeaturedSection from "@/components/featured-section"
 import Link from "next/link"
 import Image from "next/image"
 import { StructuredData } from "@/lib/utils/structured-data"
+import { viewport } from "./viewport"
 
 export const metadata = {
   title: "Coinvote.cash - Most Voted Cryptocurrencies Today by Active Communities",
@@ -112,4 +113,6 @@ export default function Home() {
     </>
   )
 }
+
+export { viewport }
 

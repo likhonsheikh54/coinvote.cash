@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { getTopNFTs } from "@/lib/actions"
+import { viewport } from "../viewport"
 
 export const metadata: Metadata = {
   title: "NFT Collections | Coinvote.xyz",
@@ -83,4 +84,6 @@ export default async function NFTPage() {
     </div>
   )
 }
+
+export { viewport }
 

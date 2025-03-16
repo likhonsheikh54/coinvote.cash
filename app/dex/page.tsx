@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { getTrendingPairs, getHotPairs } from "@/lib/actions-dexscreener"
 import DexPairsTable from "@/components/dex-pairs-table"
 import DexSearch from "@/components/dex-search"
+import { viewport } from "../viewport"
 
 export const metadata: Metadata = {
   title: "DEX Explorer | Coinvote.xyz",
@@ -41,4 +42,6 @@ export default async function DexPage() {
     </div>
   )
 }
+
+export { viewport }
 
