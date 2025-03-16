@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server"
-import { sql } from "@neondatabase/serverless"
+import { sql } from "@/lib/db/neon"
 import { Redis } from "@upstash/redis"
+import { createRedisClient } from '@/lib/redis-upstash'
 
 // Initialize Redis client for caching
-const redis = new Redis({
-  url: process.env.REDIS_URL || "",
-})
+const redis = createRedisClient()
 
 // Fetch real-time price data from CoinGecko
 async function fetchCoinGeckoData(symbol: string) {

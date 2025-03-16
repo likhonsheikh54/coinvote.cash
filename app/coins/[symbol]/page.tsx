@@ -1,12 +1,12 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
-import { sql } from "@neondatabase/serverless"
+import { sql } from "@/lib/db/neon"
 import { CoinDetails } from "@/components/coin-details"
 import { CoinPriceChart } from "@/components/coin-price-chart"
 import { CoinSocialLinks } from "@/components/coin-social-links"
 import { CoinVotingSection } from "@/components/coin-voting-section"
-import { Redis } from "@upstash/redis"
+import { createRedisClient } from "@/lib/redis-upstash"
 import { getCanonicalUrl } from "@/lib/utils/canonical"
 import {
   generateCryptoCurrencyStructuredData,
@@ -15,9 +15,7 @@ import {
 } from "@/lib/utils/structured-data"
 
 // Initialize Redis client for caching
-const redis = new Redis({
-  url: process.env.REDIS_URL || "",
-})
+const redis = createRedisClient();
 
 // Fetch coin data with caching
 async function getCoinData(symbol: string) {

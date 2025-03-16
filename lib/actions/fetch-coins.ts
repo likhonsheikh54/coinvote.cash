@@ -2,14 +2,12 @@
 
 import { neon } from "@neondatabase/serverless"
 import { Redis } from "@upstash/redis"
+import { createRedisClient } from '@/lib/redis-upstash'
 import { getLatestListings, getTrending } from "@/lib/api/coinmarketcap"
 import { revalidatePath } from "next/cache"
 
 const dbClient = neon(process.env.DATABASE_URL!)
-const redis = new Redis({
-  url: process.env.REDIS_URL || "",
-  token: "",
-})
+const redis = createRedisClient()
 
 // Fetch and store new coins from CoinMarketCap
 export async function fetchAndStoreCoins() {

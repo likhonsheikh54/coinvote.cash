@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server"
 import { Redis } from "@upstash/redis"
+import { createRedisClient } from '@/lib/redis-upstash'
 
 // Initialize Redis client for caching
-const redis = new Redis({
-  url: process.env.REDIS_URL || "",
-})
+const redis = createRedisClient()
 
 // Fetch historical price data from CoinGecko
 async function fetchCoinGeckoChartData(symbol: string, days: string) {

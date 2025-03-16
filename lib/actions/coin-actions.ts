@@ -4,12 +4,10 @@ import { neon } from "@neondatabase/serverless"
 import { revalidatePath } from "next/cache"
 import { getUserSession } from "./user-actions"
 import { Redis } from "@upstash/redis"
+import { createRedisClient } from '@/lib/redis-upstash'
 
 const dbClient = neon(process.env.DATABASE_URL!)
-const redis = new Redis({
-  url: process.env.REDIS_URL || "",
-  token: "",
-})
+const redis = createRedisClient()
 
 // Get top coins with pagination
 export async function getTopCoins(page = 1, perPage = 10) {

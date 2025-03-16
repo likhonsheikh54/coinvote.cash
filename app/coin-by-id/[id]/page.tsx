@@ -2,16 +2,15 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound, redirect } from "next/navigation"
-import { sql } from "@neondatabase/serverless"
+import { sql } from "@/lib/db/neon"
 import { Redis } from "@upstash/redis"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import { getCanonicalUrl } from "@/lib/utils/canonical"
+import { createRedisClient } from '@/lib/redis-upstash'
 
 // Initialize Redis client for caching
-const redis = new Redis({
-  url: process.env.REDIS_URL || "",
-})
+const redis = createRedisClient()
 
 // Fetch coin data with caching
 async function getCoinDataById(id: string) {

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation"
-import { sql } from "@neondatabase/serverless"
+import { sql } from "@/lib/db/neon"
 import { cookies } from "next/headers"
 import { getAuth } from "firebase-admin/auth"
 import { initAdmin } from "@/lib/firebase-admin"

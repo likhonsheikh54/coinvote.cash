@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { sql } from "@neondatabase/serverless"
+import { sql } from "@/lib/db/neon"
 import { isAdmin } from "@/lib/auth"
 import { submitPagesToIndexNow } from "@/lib/actions-indexnow"
 import { generateCanonicalUrl } from "@/lib/utils/seo-utils"

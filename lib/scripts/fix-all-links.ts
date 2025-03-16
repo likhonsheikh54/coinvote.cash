@@ -1,6 +1,6 @@
 "use server"
 
-import { sql } from "@neondatabase/serverless"
+import { sql } from "@/lib/db/neon"
 import { fixBrokenLinks } from "@/lib/utils/link-checker"
 
 /**

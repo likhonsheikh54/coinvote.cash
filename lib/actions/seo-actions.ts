@@ -1,11 +1,10 @@
 "use server"
 import { Redis } from "@upstash/redis"
 import { isAdmin } from "@/lib/auth"
+import { createRedisClient } from '@/lib/redis-upstash'
 
 // Initialize Redis client for caching
-const redis = new Redis({
-  url: process.env.REDIS_URL || "",
-})
+const redis = createRedisClient()
 
 // Mock data for demonstration
 // In a real implementation, these would come from your database and site crawl

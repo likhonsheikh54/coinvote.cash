@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server"
-import { sql } from "@neondatabase/serverless"
+import { sql } from "@/lib/db/neon"
 import { Redis } from "@upstash/redis"
 import { revalidatePath } from "next/cache"
+import { createRedisClient } from '@/lib/redis-upstash'
 
 // Initialize Redis client for caching
-const redis = new Redis({
-  url: process.env.REDIS_URL || "",
-})
+const redis = createRedisClient()
 
 export async function GET(request: Request, { params }: { params: { symbol: string } }) {
   const { symbol } = params

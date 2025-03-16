@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { sql } from "@neondatabase/serverless"
+import { sql } from "@/lib/db/neon"
 import { getRedisClient } from "@/lib/redis"
 import { getAuthSession } from "@/lib/auth"
 

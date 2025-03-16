@@ -1,6 +1,6 @@
 "use server"
 
-import { sql } from "@neondatabase/serverless"
+import { sql } from "@/lib/db/neon"
 
 /**
  * Check if a URL is valid and accessible
