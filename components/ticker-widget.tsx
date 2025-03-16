@@ -119,7 +119,7 @@ export default function TickerWidget() {
         {[...coins, ...coins].map((coin, index) => (
           <Link
             key={`${coin.id}-${index}`}
-            href={`/coins/${coin.id}`}
+            href={`/coins/${coin.symbol.toLowerCase()}`}
             className="flex items-center px-4 whitespace-nowrap hover:bg-gray-800/30"
           >
             <Image

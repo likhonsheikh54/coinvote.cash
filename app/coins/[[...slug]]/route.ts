@@ -5,7 +5,7 @@ export async function GET(request: NextRequest, { params }: { params: { slug?: s
 
   // If the slug looks like an ID (numeric or alphanumeric without special characters)
   if (slug.length === 1 && /^[a-zA-Z0-9]+$/.test(slug[0]) && !/^[a-zA-Z]{2,5}$/.test(slug[0])) {
-    // Redirect to the coin-by-id route
+    // Redirect to the coin-by-id route for IDs
     return NextResponse.redirect(new URL(`/coin-by-id/${slug[0]}`, request.url))
   }
 

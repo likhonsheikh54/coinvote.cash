@@ -148,10 +148,10 @@ export default function CommunityVotesPage() {
                             }}
                           />
                           <div>
-                            <Link href={`/coins/${coin.id}`} className="font-medium hover:text-[#FFDD33]">
+                            <Link href={`/coins/${coin.symbol.toLowerCase()}`} className="font-medium hover:text-[#FFDD33]">
                               {coin.name}
                             </Link>
-                            <div className="text-xs text-gray-400">{coin.symbol.toUpperCase()}</div>
+                            <div className="text-xs text-gray-400">{coin.symbol}</div>
                           </div>
                         </div>
                       </td>
@@ -221,7 +221,7 @@ export default function CommunityVotesPage() {
                             }}
                           />
                           <div>
-                            <Link href={`/coins/${coin.slug}`} className="font-medium hover:text-[#FFDD33]">
+                            <Link href={`/coins/${coin.symbol.toLowerCase()}`} className="font-medium hover:text-[#FFDD33]">
                               {coin.name}
                             </Link>
                             <div className="text-xs text-gray-400">{coin.symbol}</div>
