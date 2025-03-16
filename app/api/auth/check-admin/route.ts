@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server"
-import { sql } from "@neondatabase/serverless"
+import { neon } from "@neondatabase/serverless"
 import { cookies } from "next/headers"
+
+const sql = neon(process.env.DATABASE_URL!);
 
 export async function GET() {
   try {

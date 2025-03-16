@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
+import { viewport } from "../viewport"
 import GainersLosersClientPage from "./GainersLosersClientPage"
+
+export { viewport }
 
 export const metadata: Metadata = {
   title: "Gainers & Losers | Coinvote.xyz",

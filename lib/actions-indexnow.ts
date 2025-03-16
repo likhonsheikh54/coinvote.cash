@@ -50,7 +50,7 @@ export async function submitPagesToIndexNow(urls: string[], paths: string[] = []
 }
 
 // Add the missing export for IndexNow key file content
-export function getIndexNowKeyFileContent(): string {
+export async function getIndexNowKeyFileContent(): Promise<string> {
   // This should be the verification content for IndexNow
   // The file name is already the key: 7e2d195823e7419283de865536920ba8
   return '7e2d195823e7419283de865536920ba8';
